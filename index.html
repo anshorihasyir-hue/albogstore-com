@@ -1,0 +1,399 @@
+<!-- test -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albogstore - dari Bogor untuk Semua</title>
+  <meta name="description" content="Albogstore Berbagi, berbagi makanan setiap Jumat kepada yatim dan dhuafa.">
+  <meta property="og:title" content="Albogstore - Berbagi Makanan Setiap Jumat">
+  <meta property="og:description" content="Berbagi makanan setiap Jumat kepada yatim dan dhuafa.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:url" content="https://albgostore.com/">
+  <meta property="og:image" content="https://albogstore.com/preview.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Albogstore">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="albogstoreicon.webp" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style type="text/tailwindcss">
+    @theme {
+      --font-serif: 'Libre Baskerville', Cambria, serif;
+      --font-sans: 'Poppins', sans-serif;
+      --color-cream: #F7F4F0;
+      --color-ink: #1A1A1A;
+      --color-terracotta: #C45A3A;
+      --color-sand: #EAE3D8;
+      --color-olive: #7A6A4A;
+      --color-stone: #9B9082;
+    }
+  </style>
+  <style>
+    :root {
+      --cream: #F7F4F0;
+      --ink: #1A1A1A;
+      --terracotta: #C45A3A;
+      --sand: #EAE3D8;
+      --olive: #7A6A4A;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    ::selection {
+      background: rgba(196, 90, 58, 0.18);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      image-rendering: auto;
+    }
+
+    .logo-img {
+      width: auto;
+      max-width: 168px;
+      max-height: 42px;
+      object-fit: contain;
+    }
+
+    .hero-media {
+      animation: heroPresence 18s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+
+    .hero-copy > * {
+      animation: copyRise 0.9s cubic-bezier(.2, .8, .2, 1) both;
+    }
+
+    .hero-copy > *:nth-child(2) {
+      animation-delay: 0.12s;
+    }
+
+    .hero-copy > *:nth-child(3) {
+      animation-delay: 0.22s;
+    }
+
+    .hero-copy > *:nth-child(4) {
+      animation-delay: 0.32s;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 1px;
+      content: "";
+      background: var(--terracotta);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .doc-link img {
+      transition: transform 0.9s cubic-bezier(.2, .8, .2, 1), filter 0.5s ease;
+    }
+
+    .doc-link:hover img,
+    .doc-link:focus-visible img {
+      transform: scale(1.035);
+      filter: saturate(1.06) contrast(1.03);
+    }
+
+    .social-link {
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-link:hover,
+    .social-link:focus-visible {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    @keyframes heroPresence {
+      from {
+        transform: scale(1.02);
+      }
+      to {
+        transform: scale(1.09);
+      }
+    }
+
+    @keyframes copyRise {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<!-- ======== NAVIGASI ======== -->
+<body class="bg-cream text-ink font-sans antialiased">
+  <nav class="fixed inset-x-0 top-0 z-50 border-b border-ink/10 bg-cream/88 backdrop-blur-xl">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+      <a href="#beranda" class="flex items-center gap-3" aria-label="Kembali ke beranda Albogstore">
+        <img src="albogstorelogo.webp" alt="Logo Albogstore" class="logo-img" onerror="this.style.display='none'">
+        <span class="sr-only">Albogstore</span>
+      </a>
+
+      <div class="hidden items-center gap-9 text-sm font-light tracking-wide text-ink/70 md:flex">
+        <a href="#dokumentasi" class="nav-link hover:text-ink">Dokumentasi</a>
+        <a href="#partisipasi" class="nav-link hover:text-ink">Partisipasi</a>
+        <a href="#ramadhan" class="nav-link hover:text-ink">Ramadhan</a>
+        <a href="#sosmed" class="nav-link hover:text-ink">Media Sosial</a>
+      </div>
+
+      <a href="#partisipasi" class="inline-flex rounded-full border border-ink/15 px-5 py-2 text-sm font-medium text-ink transition hover:border-terracotta hover:bg-terracotta hover:text-white">
+        Donasi
+      </a>
+    </div>
+  </nav>
+<!-- ======== HERO ======== -->
+  <header id="beranda" class="relative flex min-h-screen items-center overflow-hidden">
+    <img src="albogstorehead.webp" alt="Berbagi makanan bersama Albogstore" class="hero-media absolute inset-0 h-full w-full object-cover" loading="eager">
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/48 to-ink/10"></div>
+    <div class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-cream to-transparent"></div>
+
+    <div class="hero-copy relative z-10 mx-auto w-full max-w-7xl px-6 pt-24 text-cream lg:px-10">
+      <p class="mb-7 text-sm font-medium uppercase tracking-[0.45em] text-cream/70">Albogstore Berbagi</p>
+      <h1 class="max-w-4xl font-serif text-5xl leading-[1.02] tracking-[-0.04em] md:text-7xl lg:text-[6.7rem]">
+        Dari Bogor, untuk setiap Jumat yang lebih hangat.
+      </h1>
+      <p class="mt-8 max-w-2xl text-base font-light leading-8 text-cream/78 md:text-xl">
+        Program berbagi makanan untuk yatim dan dhuafa, disiapkan sederhana, dan disalurkan secara rutin.
+      </p>
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        <a href="#partisipasi" class="inline-flex items-center justify-center gap-3 rounded-full bg-terracotta px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-xl shadow-terracotta/25 transition hover:bg-cream hover:text-ink">
+          Ikut Berpartisipasi
+          <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+        </a>
+        <a href="#dokumentasi" class="inline-flex items-center justify-center rounded-full border border-cream/35 px-8 py-4 text-sm font-medium tracking-wide text-cream transition hover:border-cream hover:bg-cream/10">
+          Lihat Dokumentasi
+        </a>
+      </div>
+    </div>
+  </header>
+<!-- ======== DOKUMENTASI ======== -->
+  <main>
+    <section id="dokumentasi" class="reveal mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+      <div class="mb-12 max-w-3xl">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-terracotta">Dokumentasi</p>
+        <h2 class="font-serif text-4xl leading-tight tracking-[-0.03em] md:text-6xl">Empat Jumat terakhir bersama Albogsotore berbagi.</h2>
+        <p class="mt-5 max-w-2xl font-light leading-8 text-ink/58">Setiap sedekah yang disalurkan telah sampai ke tangan yang membutuhkan.</p>
+      </div>
+      <div class="grid gap-x-8 gap-y-14 md:grid-cols-2">
+        <a href="#" class="doc-link group block focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-4 focus-visible:ring-offset-cream">
+          <div class="overflow-hidden bg-sand">
+            <img src="albogstoredisplay1.webp" class="aspect-[4/3] w-full object-cover" alt="Dokumentasi Jumat pertama" loading="lazy">
+          </div>
+          <div class="mt-5 flex flex-col items-start justify-between gap-4 border-t border-ink/10 pt-5 sm:flex-row sm:gap-8">
+            <div>
+              <p class="text-xs uppercase tracking-[0.28em] text-ink/36">Jumat, 24 Juli 2026</p>
+              <h3 class="mt-2 font-serif text-2xl">100 Box</h3>
+            </div>
+            <p class="max-w-[22rem] text-sm font-light leading-6 text-ink/54">33 Box ke Dhuafa Warga Pegentongan Bogor<br>34 Box ke Dhuafa Warga Sindang Barang Bogor<br>33 Box ke Dhuafa Warga Sempur Kaler Bogor</p>
+          </div>
+        </a>
+        <a href="#" class="doc-link group block focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-4 focus-visible:ring-offset-cream md:mt-16">
+          <div class="overflow-hidden bg-sand">
+            <img src="albogstoredisplay2.webp" class="aspect-[4/3] w-full object-cover" alt="Dokumentasi Jumat kedua" loading="lazy">
+          </div>
+          <div class="mt-5 flex flex-col items-start justify-between gap-4 border-t border-ink/10 pt-5 sm:flex-row sm:gap-8">
+            <div>
+              <p class="text-xs uppercase tracking-[0.28em] text-ink/36">Jumat, 17 Juli 2026</p>
+              <h3 class="mt-2 font-serif text-2xl">84 Box</h3>
+            </div>
+            <p class="max-w-[22rem] text-sm font-light leading-6 text-ink/54">56 Box ke Dhuafa Warga Parung Aleng Bogor<br>28 Box ke Masjid Nurussalam Villa Ciomas Bogor</p>
+          </div>
+        </a>
+        <a href="#" class="doc-link group block focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-4 focus-visible:ring-offset-cream">
+          <div class="overflow-hidden bg-sand">
+            <img src="albogstoredisplay3.webp" class="aspect-[4/3] w-full object-cover" alt="Dokumentasi Jumat ketiga" loading="lazy">
+          </div>
+          <div class="mt-5 flex flex-col items-start justify-between gap-4 border-t border-ink/10 pt-5 sm:flex-row sm:gap-8">
+            <div>
+              <p class="text-xs uppercase tracking-[0.28em] text-ink/36">Jumat, 10 Juli 2026</p>
+              <h3 class="mt-2 font-serif text-2xl">70 Box</h3>
+            </div>
+            <p class="max-w-[22rem] text-sm font-light leading-6 text-ink/54">23 Box ke Dhuafa Warga Kampung Sawah Bogor<br>24 Box ke Dhuafa Warga Babakan Peundeuy Bogor<br>23 Box ke Dhuafa Warga Babakan Bogor</p>
+          </div>
+        </a>
+        <a href="#" class="doc-link group block focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-4 focus-visible:ring-offset-cream md:mt-16">
+          <div class="overflow-hidden bg-sand">
+            <img src="albogstoredisplay4.webp" class="aspect-[4/3] w-full object-cover" alt="Dokumentasi Jumat keempat" loading="lazy">
+          </div>
+          <div class="mt-5 flex flex-col items-start justify-between gap-4 border-t border-ink/10 pt-5 sm:flex-row sm:gap-8">
+            <div>
+              <p class="text-xs uppercase tracking-[0.28em] text-ink/36">Jumat, 07 Juli 2026</p>
+              <h3 class="mt-2 font-serif text-2xl">50 Box</h3>
+            </div>
+            <p class="max-w-[22rem] text-sm font-light leading-6 text-ink/54">17 Box ke Dhuafa Warga Sindang Barang Bogor<br>28 Box ke Masjid Ar Rahmah Jl. Babakansari Bogor</p>
+          </div>
+        </a>
+      </div>
+    </section>
+<!-- ======== PARTISIPASI ======== -->
+    <section id="partisipasi" class="bg-ink py-24 text-cream lg:py-32">
+      <div class="reveal mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-10">
+        <div>
+          <p class="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-terracotta">Partisipasi</p>
+          <h2 class="font-serif text-4xl leading-tight tracking-[-0.03em] md:text-6xl">Satu paket, satu makan siang yang layak.</h2>
+          <p class="mt-6 max-w-xl font-light leading-8 text-cream/66">Setiap paket berisi nasi hangat, lauk sederhana, dan buah segar. Donasi bisa dimulai dari satu paket dan akan disalurkan pada program Jumat Berbagi.</p>
+
+          <div class="mt-10 border-y border-cream/12 py-7">
+            <p class="text-sm uppercase tracking-[0.28em] text-cream/38">Mulai dari</p>
+            <div class="mt-3 flex flex-wrap items-end gap-3">
+              <span class="font-serif text-5xl text-terracotta md:text-7xl">Rp 20.000</span>
+              <span class="pb-2 text-cream/45">/ paket</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/6281298719033?text=Assalamu'alaikum,%20saya%20ingin%20donasi%20bersma%20Albogstore%20Berbagi" target="_blank" class="mt-10 inline-flex items-center justify-center gap-3 rounded-full bg-terracotta px-8 py-4 text-sm font-semibold tracking-wide text-white transition hover:bg-cream hover:text-ink">
+            Sumbang Sekarang
+            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="relative min-h-[460px] overflow-hidden bg-cream/5">
+          <img src="albogstorehead.webp" alt="Paket makanan Albogstore" class="h-full min-h-[460px] w-full object-cover opacity-90" loading="lazy">
+        </div>
+      </div>
+    </section>
+<!-- ======== RAMADHAN ======== -->
+    <section id="ramadhan" class="reveal mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+      <div class="max-w-3xl">
+        <p class="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-terracotta">Program Khusus</p>
+        <h2 class="font-serif text-4xl leading-tight tracking-[-0.03em] md:text-6xl">Ramadhan Berbagi untuk waktu berbuka.</h2>
+        <p class="mt-5 max-w-2xl font-light leading-8 text-ink/58">Program khusus selama bulan suci untuk menyiapkan paket berbuka yang ringkas, hangat, dan mudah disalurkan.</p>
+      </div>
+
+      <div class="mt-16 grid gap-10 border-y border-ink/10 py-12 md:grid-cols-3">
+        <div>
+          <p class="mb-5 text-terracotta"><i class="fa-solid fa-plate-wheat text-3xl" aria-hidden="true"></i></p>
+          <h3 class="font-serif text-2xl">Paket Buka Puasa</h3>
+          <p class="mt-4 text-sm font-light leading-7 text-ink/54">Nasi kotak, kolak, kurma, teh hangat, dan buah.</p>
+          <p class="mt-7 font-serif text-4xl text-terracotta">Rp 25.000</p>
+        </div>
+
+        <div>
+          <p class="mb-5 text-terracotta"><i class="fa-solid fa-star-and-crescent text-3xl" aria-hidden="true"></i></p>
+          <h3 class="font-serif text-2xl">Setiap Hari</h3>
+          <p class="mt-4 text-sm font-light leading-7 text-ink/54">Distribusi dilakukan setelah Adzan Ashar setiap hari di bulan Ramadhan.</p>
+          <p class="mt-7 text-xs uppercase tracking-[0.28em] text-ink/35">30 Hari Penuh</p>
+        </div>
+
+        <div>
+          <p class="mb-5 text-terracotta"><i class="fa-solid fa-hands-holding-circle text-3xl" aria-hidden="true"></i></p>
+          <h3 class="font-serif text-2xl">Laporan Harian</h3>
+          <p class="mt-4 text-sm font-light leading-7 text-ink/54">Tim akan mencatat donatur dan mengirimkan dokumentasi harian.</p>
+          <a href="https://wa.me/6281298719033?text=Assalamu'alaikum,%20saya%20ingin%20donasi%20bersma%20Albogstore%20Berbagi" target="_blank" class="mt-7 inline-flex rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink">
+            Gabung Program
+          </a>
+        </div>
+      </div>
+    </section>
+<!-- ======== SOSIAL MEDIA ======== -->
+    <section id="sosmed" class="bg-sand/55 py-20">
+      <div class="reveal mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-[0.9fr_1.1fr] lg:px-10">
+        <div>
+          <p class="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-terracotta">Sosial Media</p>
+          <h2 class="font-serif text-4xl leading-tight tracking-[-0.03em] md:text-5xl">Ikuti kabar terbaru Albogstore.</h2>
+          <p class="mt-5 max-w-xl font-light leading-8 text-ink/58">Kolom ini disiapkan untuk tautan sosial media. Link dapat Anda ubah sendiri sesuai akun resmi.</p>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <a href="https://instagram.com/albogstore" class="group flex items-center justify-between border-t border-ink/12 py-5 text-ink transition hover:text-terracotta" target="_blank" rel="noopener">
+            <span class="flex items-center gap-4"><i class="fa-brands fa-instagram text-2xl" aria-hidden="true"></i> Instagram</span>
+            <i class="fa-solid fa-arrow-right-long transition group-hover:translate-x-1" aria-hidden="true"></i>
+          </a>
+          <a href="https://facebook.com/albogstore" class="group flex items-center justify-between border-t border-ink/12 py-5 text-ink transition hover:text-terracotta" target="_blank" rel="noopener">
+            <span class="flex items-center gap-4"><i class="fa-brands fa-facebook-f text-2xl" aria-hidden="true"></i> Facebook</span>
+            <i class="fa-solid fa-arrow-right-long transition group-hover:translate-x-1" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-ink py-16 text-cream/62">
+    <div class="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-10">
+      <div>
+        <p class="mt-8 text-sm">&copy; <span id="tahun">2026</span> Albogstore - Jumat dan Ramadhan Berbagi</p>
+      </div>
+      <div>
+        <div class="mt-6 flex flex-col gap-3 text-sm">
+        </div>
+      </div>
+      <div>
+        <div class="mt-6 flex flex-col gap-3 text-sm">
+          <a href="https://anshorihasyir.my.canva.site" class="social-link inline-flex items-center gap-3" target="_blank" rel="noopener"><i class="fa-solid fa-code" aria-hidden="true"></i> Designed and Developed by Hasyir</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('tahun').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
